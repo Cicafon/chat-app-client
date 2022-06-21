@@ -50,7 +50,7 @@ describe("Chat Component", () => {
 });
 
 function getButton() {
-  return screen.getByRole("button", { name: /send/i });
+  return screen.getByRole("button");
 }
 
 function getInputField() {

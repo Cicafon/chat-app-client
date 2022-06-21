@@ -30,10 +30,11 @@ const RightInnerContainer = styled.div`
   justify-content: flex-end;
   margin-right: 5%;
   img {
+    background-color: var(--blue);
     padding: 1rem;
   }
   img:hover {
-    background-color: var(--light-blue);
+    filter: brightness(90%);
     border-radius: 8px;
   }
 `;

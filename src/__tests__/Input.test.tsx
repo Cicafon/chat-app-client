@@ -24,7 +24,7 @@ describe("Input Component", () => {
     expect(setMessage).toBeCalledTimes(1);
   });
   it("sendMessage is called by clicking on the Send button", () => {
-    const button = screen.getByRole("button", { name: /send/i });
+    const button = screen.getByRole("button");
     user.click(button);
     expect(sendMessage).toBeCalledTimes(1);
   });

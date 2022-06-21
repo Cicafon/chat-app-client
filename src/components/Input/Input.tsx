@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {faPaperPlane} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StyledForm = styled.form`
   display: flex;
@@ -12,7 +14,7 @@ const StyledForm = styled.form`
     border-radius: inherit;
     padding: 5%;
     width: 80%;
-    font-size: 1.2em;
+    font-size: 1em;
     margin-right: 0.25rem;
   }
 
@@ -28,14 +30,18 @@ const StyledForm = styled.form`
     text-transform: uppercase;
     text-decoration: none;
     background: var(--blue);
-    padding: 1rem;
+    
     display: inline-block;
     border: none;
     cursor: pointer;
     width: 20%;
   }
   button:hover {
-    filter: brightness(80%);
+    filter: brightness(90%);
+  }
+
+  svg {
+    font-size: large;
   }
 `;
 
@@ -56,7 +62,7 @@ const Input: React.FC<{
         onChange={(e) => setMessage(e.target.value)}
         onKeyPress={(e) => (e.key === "Enter" ? sendMessage(e) : null)}
       ></input>
-      <button onClick={(e) => sendMessage(e)}>Send</button>
+      <button onClick={(e) => sendMessage(e)}><FontAwesomeIcon icon={faPaperPlane}/></button>
     </StyledForm>
   );
 };
