@@ -59,12 +59,12 @@ const Chat = () => {
   const [searchParams] = useSearchParams();
   const [users, setUsers] = useState<User[]>([]);
   const [error, setError] = useState("");
-  const ENDPOINT = "https://chat-app111222333.herokuapp.com/";
+  const endpoint = process.env.REACT_APP_ENDPOINT!
 
   useEffect(() => {
     const name = searchParams.get("name");
     const room = searchParams.get("room");
-    socket = io(ENDPOINT);
+    socket = io(endpoint);
     if (name && room) {
       setName(name);
       setRoom(room);
@@ -80,7 +80,7 @@ const Chat = () => {
     return () => {
       socket.disconnect();
     };
-  }, [ENDPOINT, searchParams]);
+  }, [endpoint, searchParams]);
 
   useEffect(() => {
     socket.on("message", (message: ChatMessage) => {
